@@ -1,14 +1,4 @@
- # username = "sharky_j"
- # avatar_url = "http://naserca.com/images/sharky_j.jpg"
- # photo_url = "http://naserca.com/images/shark.jpg"
- # time_ago_in_minutes = 15
- # like_count = 0
- # comment_count = 1
- # comments = [
- #   "sharky_j: Out for the long weekend... too embarassed to show y'all the beach bod!"
- # ]
-
-def humanized_time_ago(time_ago_in_minutes)
+ def humanized_time_ago(time_ago_in_minutes)
     if time_ago_in_minutes >= 60
         "#{time_ago_in_minutes / 60} hours ago"
     else
@@ -17,7 +7,7 @@ def humanized_time_ago(time_ago_in_minutes)
 end
 
 get '/' do
-  post_shark = {  
+  @post_shark = {  
     username: "sharky_j",
     avatar_url: "http://naserca.com/images/sharky_j.jpg",
     photo_url: "http://naserca.com/images/shark.jpg",
@@ -30,7 +20,7 @@ get '/' do
   }]  
 }
   
-  post_whale = {
+  @post_whale = {
     username: "kirk_whalum",  
     avatar_url: "http://naserca.com/images/kirk_whalum.jpg",
     photo_url: "http://naserca.com/images/whale.jpg",
@@ -43,7 +33,7 @@ get '/' do
     }]
 }
  
- post_marlin = {
+ @post_marlin = {
     userame: "marlin_peppa",
     avatar_url: "http://naserca.com/images/marlin_peppa.jpg",
     photo_url: "http://naserca.com/images/marlin.jpg",
@@ -56,20 +46,8 @@ get '/' do
     }]
   }
   
-  [post_shark, post_whale, post_marlin].to_s
+  [@post_shark, @post_whale, @post_marlin].to_s
+  @posts = [@post_shark, @post_whale, @post_marlin]
+  
+  erb(:index)
 end
-
- 
-  
-  
-#    humanized_time_ago(post[:time_ago_in_minutes])
-#  end
-
-
-#     post[:username]
-#  end
-#end 
-
-
-
-
