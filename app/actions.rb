@@ -3,6 +3,10 @@ get '/' do
   erb(:index)
 end
 
+get '/login' do    # when a GET request comes into /login
+  erb(:login)      # render app/views/login.erb
+end
+
 get '/signup' do     # if a user navigates to the path "/signup",
   @user = User.new   # setup empty @user object
   erb(:signup)       # render "app/views/signup.erb"
@@ -23,4 +27,5 @@ post '/signup' do
   else
     erb(:signup)
   end
+
 end
