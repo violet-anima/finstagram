@@ -28,4 +28,8 @@ post '/signup' do
     erb(:signup)
   end
 
+  post '/login' do  # when we submit a form with an action of /login
+    params.to_s     # just display the params for now to make sure it's workin
+  end
+
 end
