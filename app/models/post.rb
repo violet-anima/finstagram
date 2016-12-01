@@ -1,5 +1,12 @@
 class Post < ActiveRecord::Base
 
+  # (this is where your associations are eg: has_many :posts, etc.)...
+
+  # validations in between association definitions and methods!  
+  validates_presence_of :photo_url, :user
+
+  # (this is where your def humanized_time_ago method is, along with the rest of your methods in this file)...
+
   belongs_to :user
   has_many :comments
   has_many :likes
@@ -22,5 +29,5 @@ class Post < ActiveRecord::Base
   def comment_count
     self.comments.size
   end
-
 end
+
