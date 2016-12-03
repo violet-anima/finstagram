@@ -78,5 +78,3 @@ get '/posts/:id' do
   erb(:"posts/show")
   #escape_html @post.inspect       # print to the screen for now
 end
-
-

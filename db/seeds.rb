@@ -1,10 +1,5 @@
-puts "The seeds file is executing"
-
 user = User.create({ username: "sharky_j", avatar_url: "http://naserca.com/images/sharky_j.jpg", 
 password: "sharky_j", email: "sharky_j@sharky_j.com" }) 
-
-puts "User was created #{user}"
-
 
 Post.create({ user_id: user.id, photo_url: "http://naserca.com/images/shark.jpg"}) 
 
